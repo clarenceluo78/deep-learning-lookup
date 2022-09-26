@@ -3,7 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/tirthajyoti/Deep-Learning-with-Python.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/pulls) -->
 
-# Deep Learning Toolbox (with Python)
+# Deep Learning Lookup (with Python)
 Collection of a variety of Deep Learning (DL) code examples (notebooks and scripts) and projects. 
 
 Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** and Li Mu's **[D2L](https://d2l.ai/index.html)**
