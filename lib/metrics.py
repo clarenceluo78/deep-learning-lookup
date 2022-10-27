@@ -1,4 +1,5 @@
 import os
+import sys
 import numpy as np
 import torch
 import torchvision
@@ -8,4 +9,26 @@ from torch.utils import data
 from torchvision import transforms
 
 import inspect
+import collections
+from IPython import display
 from matplotlib import pyplot as plt
+from matplotlib_inline import backend_inline
+
+from . import utils
+
+def accuracy(y_hat, y):
+    """calculate accuracy"""
+    if len(y_hat.shape) > 1 and y_hat.shape[1] > 1:
+        y_hat = y_hat.argmax(axis=1)
+    cmp = y_hat.type(y.dtype) == y
+    return float(cmp.type(y.dtype).sum())
+
+def evaluate_accuracy(net, data_iter):
+    """evaluate accuracy of a model on the given dataset"""
+    if isinstance(net, torch.nn.Module):
+        net.eval()  # set eval mode
+    metric = utils.Accumulator(2)  # use Accumulator to sum up tp 2 variables
+    with torch.no_grad():
+        for X, y in data_iter:
+            metric.add(accuracy(net(X), y), y.numel())
+    return metric[0] / metric[1]
