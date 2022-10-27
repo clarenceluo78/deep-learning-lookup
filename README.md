@@ -6,14 +6,31 @@
 # Deep Learning Lookup
 Collection of a variety of Deep Learning (DL) code examples (notebooks and scripts), projects, and paper lists including various topics. 
 
-Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** and Li Mu's **[D2L](https://d2l.ai/index.html)**
+Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** and D2L_ai's **[D2L](https://d2l.ai/index.html)**
 
 ## Requirements
 * Python 3.6+
-* NumPy (`pip install numpy`)
-* Pandas (`pip install pandas`)
-* MatplotLib (`pip install matplotlib`)
-* Tensorflow (`pip install torch`)
+* NumPy (`pip install numpy` or `conda install numpy`)
+* Pandas (`pip install pandas` or `conda install numpy`)
+* Pytorch (`pip install torch` or `conda install numpy`)
+
+### Conda environment
+```bash
+export PROJECT_DIR=<ABSOLUTE path to the repository root>
+git clone https://github.com/clarenceluo78/deep-learning-lookup $PROJECT_DIR
+cd $PROJECT_DIR
+
+conda create -n dl-lookup python=3.8
+conda activate dl-lookup
+
+# if the following commands do not succeed, update conda
+conda env config vars set PYTHONPATH=${PYTHONPATH}:${PROJECT_DIR}
+conda env config vars set PROJECT_DIR=${PROJECT_DIR}
+
+conda deactivate
+conda activate dl-lookup
+```
+
 
 **NOTE**: Most of the Jupyter notebooks in this repo are built on **[Google Colaboratory](https://colab.research.google.com/)** using **[Google GPU cluster](https://cloud.google.com/gpu/)** and a virtual machine. Therefore, you may not need to install these packages on your local machine if you also want to use Google colab. You can **directly launch the notebooks in your Google colab environment by clicking on the links provided in the notebooks** (of course, that makes a copy of my notebook on to your Google drive).
 
@@ -31,9 +48,9 @@ Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning S
 ## Utility modules
 
 ### Utility module for example notebooks
-I created a utility function file called `DL_utils.py` in the `utils` directory under `Notebooks`. We use functions from this module whenever possible in the Jupyter notebooks.
+A utility function file called `util.py` is created under `lib` directory. I use functions from this module whenever possible in the Jupyter notebooks.
 
-You can download the module (raw Python file) from here: [DL-Utility-Module](https://raw.githubusercontent.com/tirthajyoti/Deep-learning-with-Python/master/Notebooks/utils/DL_utils.py)
+You can download another reference module (raw Python file) from here: [DL-Utility-Module](https://raw.githubusercontent.com/tirthajyoti/Deep-learning-with-Python/master/Notebooks/utils/DL_utils.py)
 
 <!-- 
 ## Notebooks
