@@ -53,6 +53,7 @@ class SyntheticRegressionData(DataModule):
         return self.get_tensorloader((self.X, self.y), train, i)
 #####################################################3
 
+
 def synthetic_regression_data(w, b, num_examples):
     """generate y=Xw+b with noise"""
     X = torch.normal(0, 1, (num_examples, len(w)))
@@ -103,3 +104,8 @@ def load_data_fashion_mnist(batch_size, resize=None):
                             num_workers=get_dataloader_workers()),
             data.DataLoader(mnist_test, batch_size, shuffle=False,
                             num_workers=get_dataloader_workers()))
+
+def load_array(data_arrays, batch_size, is_train=True):
+    """build a pytorch dataloader"""
+    dataset = data.TensorDataset(*data_arrays)
+    return data.DataLoader(dataset, batch_size, shuffle=is_train)

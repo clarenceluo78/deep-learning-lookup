@@ -23,6 +23,9 @@ cd $PROJECT_DIR
 conda create -n dl-lookup python=3.8
 conda activate dl-lookup
 
+conda install pytorch==1.7.1 torchvision==0.8.2 cudatoolkit=10.1.243 numpy=1.19.2 -c pytorch -y
+pip install -r requirements.txt
+
 # if the following commands do not succeed, update conda
 conda env config vars set PYTHONPATH=${PYTHONPATH}:${PROJECT_DIR}
 conda env config vars set PROJECT_DIR=${PROJECT_DIR}

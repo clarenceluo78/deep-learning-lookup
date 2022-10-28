@@ -33,6 +33,16 @@ def evaluate_accuracy(net, data_iter):
             metric.add(accuracy(net(X), y), y.numel())
     return metric[0] / metric[1]
 
+def evaluate_loss(net, data_iter, loss):
+    """evaluate loss of a model on the given dataset"""
+    metric = d2l.Accumulator(2)  # loss, no. of examples
+    for X, y in data_iter:
+        out = net(X)
+        y = y.reshape(out.shape)
+        l = loss(out, y)
+        metric.add(l.sum(), l.numel())
+    return metric[0] / metric[1]
+
 def predict_mnist(net, test_iter, n=6):
     """predict label for minst"""
     for X, y in test_iter:

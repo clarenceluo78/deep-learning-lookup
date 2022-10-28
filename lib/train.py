@@ -57,3 +57,7 @@ def train_image_cpu(net, train_iter, test_iter, loss, num_epochs, updater):
     assert train_loss < 0.5, train_loss
     assert train_acc <= 1 and train_acc > 0.7, train_acc
     assert test_acc <= 1 and test_acc > 0.7, test_acc
+
+def squared_loss(y_hat, y):
+    """square loss"""
+    return (y_hat - y.reshape(y_hat.shape)) ** 2 / 2
