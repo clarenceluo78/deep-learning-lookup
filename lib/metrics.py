@@ -14,7 +14,7 @@ from IPython import display
 from matplotlib import pyplot as plt
 from matplotlib_inline import backend_inline
 
-from . import utils
+from . import utils, data, vis
 
 def accuracy(y_hat, y):
     """calculate accuracy"""
@@ -32,3 +32,13 @@ def evaluate_accuracy(net, data_iter):
         for X, y in data_iter:
             metric.add(accuracy(net(X), y), y.numel())
     return metric[0] / metric[1]
+
+def predict_mnist(net, test_iter, n=6):
+    """predict label for minst"""
+    for X, y in test_iter:
+        break
+    trues = data.get_fashion_mnist_labels(y)
+    preds = data.get_fashion_mnist_labels(net(X).argmax(axis=1))
+    titles = [true +'\n' + pred for true, pred in zip(trues, preds)]
+    vis.show_images(
+        X[0:n].reshape((n, 28, 28)), 1, n, titles=titles[0:n])

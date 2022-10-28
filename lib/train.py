@@ -23,7 +23,7 @@ def sgd(params, lr, batch_size):
             param -= lr * param.grad / batch_size
             param.grad.zero_()
 
-def train_epoch(net, train_iter, loss, updater):
+def train_epoch_image(net, train_iter, loss, updater):
     """one epoch of training"""
     # set train mode
     if isinstance(net, torch.nn.Module):
@@ -45,12 +45,12 @@ def train_epoch(net, train_iter, loss, updater):
     # return train loss and train accuracy
     return metric[0] / metric[2], metric[1] / metric[2]
 
-def train(net, train_iter, test_iter, loss, num_epochs, updater):
+def train_image_cpu(net, train_iter, test_iter, loss, num_epochs, updater):
     """train model"""
     animator = vis.Animator(xlabel='epoch', xlim=[1, num_epochs], ylim=[0.3, 0.9],
                         legend=['train loss', 'train acc', 'test acc'])
     for epoch in range(num_epochs):
-        train_metrics = train_epoch(net, train_iter, loss, updater)
+        train_metrics = train_epoch_image(net, train_iter, loss, updater)
         test_acc = metrics.evaluate_accuracy(net, test_iter)
         animator.add(epoch + 1, train_metrics + (test_acc,))
     train_loss, train_acc = train_metrics
