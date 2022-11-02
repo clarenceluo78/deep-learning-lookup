@@ -35,7 +35,7 @@ def evaluate_accuracy(net, data_iter):
 
 def evaluate_loss(net, data_iter, loss):
     """evaluate loss of a model on the given dataset"""
-    metric = d2l.Accumulator(2)  # loss, no. of examples
+    metric = utils.Accumulator(2)  # loss, no. of examples
     for X, y in data_iter:
         out = net(X)
         y = y.reshape(out.shape)
