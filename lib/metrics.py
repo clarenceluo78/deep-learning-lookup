@@ -52,3 +52,57 @@ def predict_mnist(net, test_iter, n=6):
     titles = [true +'\n' + pred for true, pred in zip(trues, preds)]
     vis.show_images(
         X[0:n].reshape((n, 28, 28)), 1, n, titles=titles[0:n])
+
+def sensitive_analysis(X, y, repeat_times, model):
+    silhouette_list = []
+    rand_index_list = []
+    print('The repeated initialization times of each algorithm is set to:', repeat_times)
+    print('Sensitivity analysis starts, please wait...')
+    if (model == 'Kmeans'):
+        # k-means
+        for i in range(repeat_times):
+            KMeans_ = KMeans(num_clusters=3, max_iterations=100, random_seed=i, show_epochs=False)
+            y_pred = KMeans_.fit(X)
+            silhouette_list.append(silhouette_coef(X, y_pred))
+            rand_index_list.append(rand_index(y, y_pred))
+        
+        print("Sensitive analysis of K-means:")
+        print("----Silhouette evaluation score: ", np.var(silhouette_list))
+        print("----Rand index score: ", np.var(rand_index_list))
+        
+        silhouette_list.clear()
+        rand_index_list.clear()
+    elif (model == 'accKmeans'):
+        # accelerated k-means
+        for i in range(repeat_times):
+            accKMeans_ = accKMeans(num_clusters=3, max_iterations=100, random_seed=i, show_epochs=False)
+            accKMeans_.fit(X)
+            add_one = np.array(np.ones(X.shape[0]))
+            accKMeans_result = np.int64(accKMeans_.assignments + add_one)
+            silhouette_list.append(silhouette_coef(X, accKMeans_result))
+            rand_index_list.append(rand_index(y, accKMeans_result))
+            
+        print("Sensitive analysis of Accelerated K-means:")
+        print("----Silhouette evaluation score: ", np.var(silhouette_list))
+        print("----Rand index score: ", np.var(rand_index_list))
+        
+        silhouette_list.clear()
+        rand_index_list.clear()
+    elif (model == 'GMM'):
+        # gmm
+        for i in range(repeat_times):
+            GMM_ = GMM(num_clusters=3, tolerance=1e-3, random_seed=i, show_epochs=False)
+            GMM_.fit(X)
+            add_one = np.array(np.ones(X.shape[0]))
+            GMM_result = np.int64(GMM_.assignments + add_one)
+            silhouette_list.append(silhouette_coef(X, GMM_result))
+            rand_index_list.append(rand_index(y, GMM_result))
+            
+        print("Sensitive analysis of GMM-EM:")
+        print("----Silhouette evaluation score: ", np.var(silhouette_list))
+        print("----Rand index score: ", np.var(rand_index_list))
+        
+        silhouette_list.clear()
+        rand_index_list.clear()
+    else:
+        raise NotImplementedError
