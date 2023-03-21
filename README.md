@@ -6,7 +6,7 @@
 # Deep Learning Lookup
 Collection of a variety of Deep Learning (DL) code examples (notebooks and scripts), projects, and paper lists including various topics. 
 
-Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** and D2L_ai's **[D2L](https://d2l.ai/index.html)**
+Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** , D2L_ai's **[D2L](https://d2l.ai/index.html)** and the Probabilistic Machine Learning book by Kevin Murphy.
 
 ## Requirements
 * Python 3.6+
