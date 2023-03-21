@@ -51,7 +51,7 @@ conda activate dl-lookup
 ## Utility modules
 
 ### Utility module for example notebooks
-A utility function file called `util.py` is created under `lib` directory. I use functions from this module whenever possible in the Jupyter notebooks.
+A utility function file called `util.py` is created under `lib` directory. I use functions from this module whenever possible in the Jupyter notebooks. For more information you can look into the folder.
 
 You can download another reference module (raw Python file) from here: [DL-Utility-Module](https://raw.githubusercontent.com/tirthajyoti/Deep-learning-with-Python/master/Notebooks/utils/DL_utils.py)
 
