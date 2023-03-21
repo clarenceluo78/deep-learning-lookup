@@ -170,7 +170,7 @@ if __name__ == '__main__':
     
     ''' GMM:
     Runing GMM with multiple random initializations,
-    and picking one with the highest
+    and picking one with the highest score
     '''
     print('--------------------GMM-EM--------------------')
     tic = time.process_time()
