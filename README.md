@@ -1,20 +1,22 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tirthajyoti/Papers-Literature-ML-DL-RL-AI/pulls)
 <!-- [![GitHub forks](https://img.shields.io/github/forks/tirthajyoti/Deep-Learning-with-Python.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/network)
 [![GitHub stars](https://img.shields.io/github/stars/tirthajyoti/Deep-Learning-with-Python.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/pulls) -->
 
-# Deep Learning Lookup
-Collection of a variety of Deep Learning (DL) code examples (notebooks and scripts), projects, and paper lists including various topics. 
+# Code Collection for Impactful and Widely Cited ML/DL/RL/AI Algorithms
+Collection of a variety of machine learning/deep learning/reinforcement learning code examples (notebooks and scripts), projects, and paper lists on various topics. 
 
 Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** , D2L_ai's **[D2L](https://d2l.ai/index.html)** and the Probabilistic Machine Learning book by Kevin Murphy.
 
 ## Requirements
+If you wish to run my codes directly, your code environment may need to satisfy the following requirements:
 * Python 3.6+
 * NumPy (`pip install numpy` or `conda install numpy`)
 * Pandas (`pip install pandas` or `conda install numpy`)
 * Pytorch (`pip install torch` or `conda install numpy`)
 
-### Conda environment
+A conda environment is recommended:
 ```bash
 export PROJECT_DIR=<ABSOLUTE path to the repository root>
 git clone https://github.com/clarenceluo78/deep-learning-lookup $PROJECT_DIR
@@ -39,19 +41,12 @@ conda activate dl-lookup
 
 > For more information about using **Google Colab** for your deep learning work, [check their FAQ here](https://research.google.com/colaboratory/faq.html). You are also welcomed to take a look at Kaggle notebook!
 
----
-
-
-
-
-
-
 
 
 ## Utility modules
 
 ### Utility module for example notebooks
-A utility function file called `util.py` is created under `lib` directory. I use functions from this module whenever possible in the Jupyter notebooks. For more information you can look into the folder.
+A utility function file called `util.py` is created under `lib` directory. I use functions from this module whenever possible in the Jupyter notebooks. For more information you can look into the `lib` folder.
 
 You can download another reference module (raw Python file) from here: [DL-Utility-Module](https://raw.githubusercontent.com/tirthajyoti/Deep-learning-with-Python/master/Notebooks/utils/DL_utils.py)
 
