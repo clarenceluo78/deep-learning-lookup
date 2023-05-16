@@ -4,8 +4,8 @@
 [![GitHub stars](https://img.shields.io/github/stars/tirthajyoti/Deep-Learning-with-Python.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/stargazers)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tirthajyoti/Deep-Learning-with-Python/pulls) -->
 
-# Code Collection for ML/DL/RL/AI Algorithms
-Collection of a variety of machine learning/deep learning/reinforcement learning code examples (notebooks and scripts), projects, and paper lists on various topics. 
+# Collection and Implementation for ML/DL/RL/AI Algorithms
+Collection and implementation of a variety of machine learning/deep learning/reinforcement learning code examples (notebooks and scripts), projects, and paper lists on various topics. 
 
 Some of the Jupyter notebooks are referenced from Andrew Ng's **[Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning)** , D2L_ai's **[D2L](https://d2l.ai/index.html)** and the Probabilistic Machine Learning book by Kevin Murphy.
 
