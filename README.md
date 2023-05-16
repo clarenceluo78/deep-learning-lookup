@@ -37,9 +37,9 @@ conda activate dl-lookup
 ```
 
 
-**NOTE**: Most of the Jupyter notebooks in this repo are built on **[Google Colaboratory](https://colab.research.google.com/)** using **[Google GPU cluster](https://cloud.google.com/gpu/)** and a virtual machine. Therefore, you may not need to install these packages on your local machine if you also want to use Google colab. You can **directly launch the notebooks in your Google colab environment by clicking on the links provided in the notebooks** (of course, that makes a copy of my notebook on to your Google drive).
+<!-- **NOTE**: Most of the Jupyter notebooks in this repo are built on **[Google Colaboratory](https://colab.research.google.com/)** using **[Google GPU cluster](https://cloud.google.com/gpu/)** and a virtual machine. Therefore, you may not need to install these packages on your local machine if you also want to use Google colab. You can **directly launch the notebooks in your Google colab environment by clicking on the links provided in the notebooks** (of course, that makes a copy of my notebook on to your Google drive).
 
-> For more information about using **Google Colab** for your deep learning work, [check their FAQ here](https://research.google.com/colaboratory/faq.html). You are also welcomed to take a look at Kaggle notebook!
+> For more information about using **Google Colab** for your deep learning work, [check their FAQ here](https://research.google.com/colaboratory/faq.html). You are also welcomed to take a look at Kaggle notebook! -->
 
 
 
@@ -47,8 +47,6 @@ conda activate dl-lookup
 
 ### Utility module for example notebooks
 A utility function file called `util.py` is created under `lib` directory. I use functions from this module whenever possible in the Jupyter notebooks. For more information you can look into the `lib` folder.
-
-You can download another reference module (raw Python file) from here: [DL-Utility-Module](https://raw.githubusercontent.com/tirthajyoti/Deep-learning-with-Python/master/Notebooks/utils/DL_utils.py)
 
 <!-- 
 ## Notebooks
